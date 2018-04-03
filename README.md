@@ -20,7 +20,7 @@
 * Get and place these tokens in a new file slackBot/microservice/tokens.json, in the same format at slackBot/microservice/tokens_example.json:
 * [Google maps geocode api key](https://developers.google.com/maps/documentation/geocoding/intro)
 * [Google maps time api key](https://developers.google.com/maps/documentation/timezone/intro)
-[Open Weather API key](https://openweathermap.org/api)
+* [Open Weather API key](https://openweathermap.org/api)
 
 
 
