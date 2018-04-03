@@ -4,7 +4,8 @@
   "description": "",
   "main": "server/service.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'Error: no test specified' && exit 1",
+    "start": "echo 'TRANSPILING...' && babel server_es6 -d server && babel bin_es6 -d bin && echo 'RUNNING SERVICE' && node bin/run"
   },
   "author": "Anshil Bhansali",
   "license": "ISC",
@@ -12,5 +13,9 @@
     "@slack/client": "^3.8.1",
     "express": "^4.14.1",
     "superagent": "^3.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
   }
 }

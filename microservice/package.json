@@ -1,0 +1,17 @@
+{
+  "name": "iris-time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/service.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "start": "echo 'RUNNING MICROSERVICE' && node bin/run"
+  },
+  "author": "Anshil Bhansali",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "moment": "^2.17.1",
+    "superagent": "^3.5.0"
+  }
+}

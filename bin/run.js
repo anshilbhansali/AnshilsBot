@@ -1,24 +1,24 @@
-'use strict'
+'use strict';
 
-const slackClient = require('../server/slackClient');
-const service = require('../server/service');
-const http = require('http');
+var _service = require('../server/service');
 
-const server = http.createServer(service);
+var _service2 = _interopRequireDefault(_service);
 
-const witToken = '62QH3GSIPKCXAZOXWJPTTYJFKWHFVGGW';
-const witClient = require('../server/witClient')(witToken);
+var _slackClient = require('../server/slackClient');
 
-const slackToken = 'xoxb-147431376391-0UH5OMSfg24Qry0svS0nNPVv';
+var _slackClient2 = _interopRequireDefault(_slackClient);
 
-const rtm = slackClient.init(slackToken, witClient);
-rtm.start();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//to ensure server starts when slack client is connected
-slackClient.addAuthenticatedHandler(rtm, () => server.listen(3000));
+var http = require('http');
 
-server.on('listening', function(){
-	console.log(`IRIS is listening on ${server.address().port}`);
-});
+var server = http.createServer(_service2.default);
 
+var slack_client = new _slackClient2.default(getTokens().slack_token, server, getTokens().wit_token);
 
+function getTokens() {
+	var fs = require('fs');
+	var rawdata = fs.readFileSync('tokens.json');
+	var data = JSON.parse(rawdata);
+	return { slack_token: data.slackToken, wit_token: data.witToken };
+}
