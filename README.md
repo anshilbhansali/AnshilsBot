@@ -23,6 +23,10 @@
 * [Open Weather API key](https://openweathermap.org/api)
 
 
+## Example Questions
+* ![time](https://raw.githubusercontent.com/anshilbhansali/slackBot/master/time_newyork.png)
+
+
 
 
 
