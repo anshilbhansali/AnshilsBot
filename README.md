@@ -10,7 +10,7 @@
 * slack channel - https://hackillinois2017.slack.com
 * ...Working on building a web interface for this technology...
 
-##Important
+## Important
 ### Slack/Wit.ai tokens:
 * Get and place these tokens in a new file slackBot/tokens.json, in the same format at slackBot/tokens_example.json:
 * [Wit Token](https://wit.ai/)
