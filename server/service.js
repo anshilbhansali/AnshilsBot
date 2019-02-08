@@ -32,17 +32,13 @@ var wit_client = new _witClient2.default(getTokens().wit_token);
 //default port is 3000
 //also allows port 8000
 service.get('/', function (req, res) {
-	res.send('hello! go to https://hackillinois2017.slack.com');
+	res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
 service.post('/ask', function (req, res) {
 	askWit(req.body.q).then(function (response) {
 		res.send(response);
 	});
-});
-
-service.get('/main', function (req, res) {
-	res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
 //basically allows localhost:8000 for the above ^ route

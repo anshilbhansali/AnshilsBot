@@ -6,7 +6,7 @@
 * cd into project
 * npm install
 * run *npm start* to start server
-* Go to - localhost:8000/main
+* Go to - localhost:8000
 
 ## Important
 ### Wit.ai tokens:

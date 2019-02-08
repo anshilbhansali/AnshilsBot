@@ -23,7 +23,7 @@ let wit_client = new WitClient(getTokens().wit_token);
 //default port is 3000
 //also allows port 8000
 service.get('/', function (req, res) {
-  res.send('hello! go to https://hackillinois2017.slack.com');
+  res.sendFile(path.join(__dirname+'/views/index.html'));
 })
 
 service.post('/ask', function (req, res) {
@@ -32,9 +32,6 @@ service.post('/ask', function (req, res) {
   });
 })
 
-service.get('/main', function (req, res) {
-  res.sendFile(path.join(__dirname+'/views/index.html'));
-})
 
 //basically allows localhost:8000 for the above ^ route
 service.listen(8000, () => console.log('Anshils web app listening on port 8000!\nCheck localhost:8000'))
