@@ -21,13 +21,4 @@
 
 
 ## Example Questions
-![greeting](https://raw.githubusercontent.com/anshilbhansali/slackBot/master/greeting.png)
-![time](https://raw.githubusercontent.com/anshilbhansali/slackBot/master/time_newyork.png)
-![weather](https://raw.githubusercontent.com/anshilbhansali/slackBot/master/weather_india.png)
-![both](https://raw.githubusercontent.com/anshilbhansali/slackBot/master/weather_time_dubai.png)
-
-
-
-
-
-
+![greeting](https://raw.githubusercontent.com/anshilbhansali/slackBot/master/example_usage.png)
