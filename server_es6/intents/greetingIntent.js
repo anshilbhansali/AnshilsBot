@@ -6,7 +6,7 @@ export default class greetingIntent{
 	}
 
 	process(){
-		let greeting = `Hi! I am Anshils Slack Bot. Ask me about the time and/or weather in any part of the world!`
+		let greeting = `Hi! I am Anshils Bot. Ask me about the time and/or weather in any part of the world!`
 
 		return new Promise(function(resolve, reject){
 			resolve(greeting);

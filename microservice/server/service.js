@@ -8,8 +8,9 @@ const moment = require('moment');
 
 function getKeys(){
 	const fs = require('fs');
-	let rawdata = fs.readFileSync('tokens.json');  
+	let rawdata = fs.readFileSync('microservice/tokens.json');  
 	let data = JSON.parse(rawdata); 
+
 	return {
 		geo_key: data.googleAPIGEOKey, 
 		time_key: data.googleAPITimeKey, 
@@ -37,7 +38,6 @@ service.get('/service/time/:location', (req, res, next) => {
 				console.log(err);
 				return res.sendStatus(500);
 			}
-
 
 			const location = response.body.results[0].geometry.location;
 			//+ is for integer return, X is for unix timestamp

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#ask_button").click(function(){
+    var question = $("#question_text").val();
+
+    $("#thinking").text("....")
+    $.post("http://localhost:8000/ask", {q: question}, function(data, status){
+      $("#q_a_list").prepend('<li><p style="white-space: pre-line">Answer: '+data+'<p></li><br>');
+      $("#q_a_list").prepend('<li><p>Question: '+$("#question_text").val()+'<p></li>');
+      console.log(data);
+      $("#question_text").val("");
+       $("#thinking").text("")
+    });
+    
+  });
+
+  $("#question_text").keyup(function(event) {
+      if (event.keyCode === 13) {
+          $("#ask_button").click();
+      }
+  });
+});
+</script>
+</head>
+<body>
+
+<h3> Anshil's bot </h3>
+
+Ask me about the time and/or weather in any part of the world: 
+<br>
+<input type="text" id="question_text" value="" size="70">
+<br>
+<input id="ask_button" type="submit" value="Ask">
+
+<p id="thinking"></p>
+
+<ul id="q_a_list">
+</ul>
+
+
+</body>
+</html>
