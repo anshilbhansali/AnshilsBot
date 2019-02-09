@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 import IntentFactory from './intentFactory.js'
 const path = require('path');
 
+service.set('port', process.env.PORT || 8080);
 service.use(bodyParser.urlencoded({ extended: false }));
 service.use(bodyParser.json());
 
@@ -19,9 +20,6 @@ function getTokens(){
 import WitClient from './witClient.js'
 let wit_client = new WitClient(getTokens().wit_token);
 
-//localhost:3000 
-//default port is 3000
-//also allows port 8000
 service.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/views/index.html'));
 })
@@ -32,9 +30,7 @@ service.post('/ask', function (req, res) {
   });
 })
 
-
-//basically allows localhost:8000 for the above ^ route
-service.listen(8000, () => console.log('Anshils web app listening on port 8000!\nCheck localhost:8000'))
+service.listen(service.get('port'), () => console.log('Anshils web app listening on port '+service.get('port')))
 
 module.exports = service;
 

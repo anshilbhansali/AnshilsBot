@@ -16,6 +16,7 @@ var bodyParser = require("body-parser");
 
 var path = require('path');
 
+service.set('port', process.env.PORT || 8080);
 service.use(bodyParser.urlencoded({ extended: false }));
 service.use(bodyParser.json());
 
@@ -28,9 +29,6 @@ function getTokens() {
 
 var wit_client = new _witClient2.default(getTokens().wit_token);
 
-//localhost:3000 
-//default port is 3000
-//also allows port 8000
 service.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname + '/views/index.html'));
 });
@@ -41,9 +39,8 @@ service.post('/ask', function (req, res) {
 	});
 });
 
-//basically allows localhost:8000 for the above ^ route
-service.listen(8000, function () {
-	return console.log('Anshils web app listening on port 8000!\nCheck localhost:8000');
+service.listen(service.get('port'), function () {
+	return console.log('Anshils web app listening on port ' + service.get('port'));
 });
 
 module.exports = service;

@@ -5,7 +5,8 @@
   "main": "server/service.js",
   "scripts": {
     "test": "echo 'Error: no test specified' && exit 1",
-    "start": "echo 'TRANSPILING...' && babel server_es6 -d server && babel bin_es6 -d bin && echo 'RUNNING SERVICE' && node bin/run & node microservice/bin/run"
+    "transpile": "echo 'TRANSPILING...' && babel server_es6 -d server && babel bin_es6 -d bin &&",
+    "start": "echo 'RUNNING SERVICE' && node bin/run & node microservice/bin/run"
   },
   "author": "Anshil Bhansali",
   "license": "ISC",
